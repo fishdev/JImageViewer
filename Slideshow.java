@@ -60,13 +60,8 @@ public class Slideshow extends JFrame {
         slidePanel.getActionMap().put("escape", escape);
         slidePanel.setBackground(Color.BLACK);
         
-        JLabel loading = null;
-        try {
-          loading = new JLabel(new ImageIcon(new URL("file://" + System.getProperty("user.dir") + "/src/resources/loading.gif")));
-          slidePanel.add(loading);
-        } catch (MalformedURLException e1) {
-          
-        }
+        JLabel loading = loading = new JLabel("Loading...");
+        slidePanel.add(loading);
         
         final ArrayList<JLabel> slides = new ArrayList<JLabel>();
         new Thread(new Runnable() {

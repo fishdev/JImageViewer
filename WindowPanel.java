@@ -197,7 +197,7 @@ class WindowPanel extends JPanel {
   public void panelWelcome() throws IOException {
     GridBagConstraints layoutConstraints = new GridBagConstraints();
     
-    JLabel icon = new JLabel(getImage(System.getProperty("user.dir") + "/src/resources/icon.png", 200));
+    JLabel icon = new JLabel(getImage("resources/icon.png", 200));
     JLabel title = new JLabel("Welcome to JImageViewer!");
     title.setFont(new Font("Droid Sans", Font.BOLD, 54));
     title.setHorizontalAlignment(SwingConstants.CENTER);
@@ -237,7 +237,7 @@ class WindowPanel extends JPanel {
     
     int recentY = 3;
     for(final String currentRecent : recent) {
-      final JLabel recentItemIcon = new JLabel(getImage(System.getProperty("user.dir") + "/src/resources/folder.png", 50));
+      final JLabel recentItemIcon = new JLabel(getImage("resources/folder.png", 50));
       recentItemIcon.setHorizontalAlignment(SwingConstants.LEFT);
       JButton recentItemTitle = new JButton(currentRecent);
       recentItemTitle.setFont(new Font("Droid Sans", Font.BOLD, 22));
@@ -363,14 +363,14 @@ class WindowPanel extends JPanel {
     final JCheckBoxMenuItem menuViewToolbar = new JCheckBoxMenuItem("Show Toolbar");
     
     final JToolBar toolbar = new JToolBar("ImageViewer Tools");
-    JButton toolAlbum = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/new-album.png", 25));
-    JButton toolImage = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/new-image.png", 25));
-    JButton toolSlideshow = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/slideshow.png", 25));
-    final JToggleButton toolViewGrid = new JToggleButton(getImage(System.getProperty("user.dir") + "/src/resources/grid.png", 25));
-    final JToggleButton toolViewList = new JToggleButton(getImage(System.getProperty("user.dir") + "/src/resources/list.png", 25));
+    JButton toolAlbum = new JButton(getImage("resources/new-album.png", 25));
+    JButton toolImage = new JButton(getImage("resources/new-image.png", 25));
+    JButton toolSlideshow = new JButton(getImage("resources/slideshow.png", 25));
+    final JToggleButton toolViewGrid = new JToggleButton(getImage("resources/grid.png", 25));
+    final JToggleButton toolViewList = new JToggleButton(getImage("resources/list.png", 25));
     ButtonGroup toolViewGroup = new ButtonGroup();
-    JButton toolReload = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/reload.png", 25));
-    JButton toolSearch = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/search.png", 25));
+    JButton toolReload = new JButton(getImage("resources/reload.png", 25));
+    JButton toolSearch = new JButton(getImage("resources/search.png", 25));
     
     ActionListener albumAction = new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -599,7 +599,7 @@ class WindowPanel extends JPanel {
     toolbar.addSeparator();
     toolbar.add(toolSearch);
     toolbar.addSeparator();
-    toolbar.setPreferredSize(new Dimension(1024, 40));
+    toolbar.setPreferredSize(new Dimension(1440, 40));
     layoutConstraints.fill = GridBagConstraints.HORIZONTAL;
     layoutConstraints.gridx = 0;
     layoutConstraints.gridy = 0;
@@ -616,7 +616,7 @@ class WindowPanel extends JPanel {
     
     imageScroller = new JScrollPane(imageContainer);
     imageScroller.setBorder(null);
-    imageScroller.setPreferredSize(new Dimension(1024, 600));
+    imageScroller.setPreferredSize(new Dimension(1440, 750));
     imageScroller.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     imageScroller.getHorizontalScrollBar().setUnitIncrement(10);
     imageScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -667,8 +667,8 @@ class WindowPanel extends JPanel {
           }
           JMenuItem menuAlbumInfo = new JMenuItem("Info");
           JMenuItem menuAlbumBack = new JMenuItem("Back");
-          JButton toolBack = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/back.png", 25));
-          JButton toolInfo = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/info.png", 25));
+          JButton toolBack = new JButton(getImage("resources/back.png", 25));
+          JButton toolInfo = new JButton(getImage("resources/info.png", 25));
           
           ActionListener infoAction = new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -779,7 +779,7 @@ class WindowPanel extends JPanel {
       }
       
       if(grid) {
-        xMax = 2;
+        xMax = 3;
         imageConstant = 300.0;
         folderConstant = 200.0;
       } else if(!grid) {
@@ -799,7 +799,7 @@ class WindowPanel extends JPanel {
         JButton labelImage = null;
         Image srcImage = null;
         if(fileIndex.get(j).isDirectory()) {
-          labelImage = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/folder.png", folderConstant));
+          labelImage = new JButton(getImage("resources/folder.png", folderConstant));
           labelImage.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
               try {
@@ -919,19 +919,19 @@ class WindowPanel extends JPanel {
     JMenuItem menuImagePrevious = new JMenuItem("Previous");
     JMenuItem menuImageNext = new JMenuItem("Next");
     JMenuItem menuImageBack = new JMenuItem("Back to Gallery");
-    JButton toolBack = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/back.png", 25));
-    JButton toolFlip = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/flip.png", 25));
-    JButton toolRotate = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/rotate.png", 25));
-    JButton toolNegative = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/negative.png", 25));
-    JButton toolFullscreen = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/fullscreen.png", 25));
-    final JToggleButton toolInfo = new JToggleButton(getImage(System.getProperty("user.dir") + "/src/resources/info.png", 25));
+    JButton toolBack = new JButton(getImage("resources/back.png", 25));
+    JButton toolFlip = new JButton(getImage("resources/flip.png", 25));
+    JButton toolRotate = new JButton(getImage("resources/rotate.png", 25));
+    JButton toolNegative = new JButton(getImage("resources/negative.png", 25));
+    JButton toolFullscreen = new JButton(getImage("resources/fullscreen.png", 25));
+    final JToggleButton toolInfo = new JToggleButton(getImage("resources/info.png", 25));
     final JPanel imageViewer = new JPanel(new GridBagLayout());
     final GridBagConstraints imageViewerLayoutConstraints = new GridBagConstraints();
     final ImageIcon scaledImage = getImage(srcFile.getAbsolutePath(), 550.0);
     JLabel labelImage = new JLabel(scaledImage);
     final JPanel imageInfo = showImageInfo(srcFile, scaledImage);
-    JButton imagePrev = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/previous.png", 25));
-    JButton imageNext = new JButton(getImage(System.getProperty("user.dir") + "/src/resources/next.png", 25));
+    JButton imagePrev = new JButton(getImage("resources/previous.png", 25));
+    JButton imageNext = new JButton(getImage("resources/next.png", 25));
     
     ActionListener backAction = new ActionListener() {
       public void actionPerformed(ActionEvent arg0) {

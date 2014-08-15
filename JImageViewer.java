@@ -61,16 +61,17 @@ public class JImageViewer {
       public void run() {
         window = new JFrame();
         window.setTitle("JImageViewer");
-        window.setSize(1024, 768);
+        window.setSize(1440, 900);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         WindowPanel panel = null;
         
         try {
           UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-          window.setIconImage(ImageIO.read(new File(System.getProperty("user.dir") + "/src/resources/icon.png")));
+          window.setIconImage(ImageIO.read(new File("resources/icon.png")));
           panel = new WindowPanel("start");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException | ParserConfigurationException | SAXException | IOException e1) {
           JOptionPane.showMessageDialog(null, "Error launching JImageViewer", "Fatal Error", JOptionPane.ERROR_MESSAGE);
+          e1.printStackTrace();
         }
         
         window.add(panel);
