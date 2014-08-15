@@ -26,9 +26,11 @@ JImageViewer offers tons of exciting and practical features:
 ### Installation
 
 The files provided here are the only the source files for JImageViewer. To run the application, you can compile them yourself or create an executable JAR package by following the steps below:
+
 1. In a terminal, enter the directory of the JImageViewer source files and run `javac JImageViewer.java`. If you just want to run the application for testing purposes, use the command `java JImageViewer` and stop after that. Continue if you want to use JImageViewer as a full-fledged app on your system.
 2. Run `jar cvfe JImageViewer.jar JImageViewer *.class`. The output that follows is normal.
 3. Launch JImageViewer with `java -jar JImageViewer.jar` or mark the file as executable and double-click on it.
+
 That's it! By default, JImageViewer reads your normal Pictures directory, but you can set a new location in the preferences dialog.
 
 ### More Information
