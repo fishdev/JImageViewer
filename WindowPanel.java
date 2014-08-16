@@ -919,7 +919,7 @@ class WindowPanel extends JPanel {
     JMenuItem menuImagePrevious = new JMenuItem("Previous");
     JMenuItem menuImageNext = new JMenuItem("Next");
     JMenuItem menuImageBack = new JMenuItem("Back to Gallery");
-    JButton toolBack = new JButton(getImage("resources/back.png", 25));
+    JButton toolBack = new JButton(getImage("resources/home.png", 25));
     JButton toolFlip = new JButton(getImage("resources/flip.png", 25));
     JButton toolRotate = new JButton(getImage("resources/rotate.png", 25));
     JButton toolNegative = new JButton(getImage("resources/negative.png", 25));
